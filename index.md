@@ -1,1 +1,1 @@
-# AutoMain
+# AutoMainIndex.md
