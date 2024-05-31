@@ -6,7 +6,7 @@
 
 default
 
-![Icon](C://Users/AutoMain/Desktop/icon.jpg "Icon")
+![Icon](./icon.jpg "Icon")
 
 > 插入代码
 
