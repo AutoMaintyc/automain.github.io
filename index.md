@@ -6,7 +6,7 @@
 
 default
 
-![Icon](https://github.com/AutoMaintyc/automain.github.io/blob/main/icon.jpg "Icon")
+![Icon](https://github.com/AutoMaintyc/automain.github.io/blob/main/icon.jpg)
 
 > 插入代码
 
