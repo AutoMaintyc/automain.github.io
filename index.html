@@ -8,17 +8,23 @@
 </head>
 <body>
 <div class="container">
+
     <div class="leftTitleList">
-        <div class="titleItem">title列表--1</div>
-        <div class="titleItem">title列表--2</div>
-        <div class="titleItem">title列表--3</div>
-        <div class="titleItem">title列表--4</div>
-        <div class="titleItem">title列表--5</div>
-        <div class="titleItem">title列表--6</div>
-        <div class="titleItem">title列表--7</div>
-        <div class="titleItem">title列表--8</div>
-        <div class="titleItem">title列表--9</div>
+
     </div>
+    <script>
+        // 使用 fetch API 加载外部文件
+        fetch('leftTitleList.html')
+            .then(response => response.text())
+            .then(data => {
+                // 将加载的 HTML 插入到指定的 div 中
+                document.querySelector('.leftTitleList').innerHTML = data;
+            })
+            .catch(error => {
+                console.error('Error loading external HTML file:', error);
+            });
+    </script>
+
     <div class="rightContent">
 
     </div>
