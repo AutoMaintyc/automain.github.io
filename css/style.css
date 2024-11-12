@@ -33,7 +33,7 @@
     width: 20%;
     display: flex;
     flex-direction: column; /*水平布局*/
-    gap: 10px;/*间距*/
+    gap: 10px; /*间距*/
     justify-content: flex-start; /* 向上对齐 */
     align-items: flex-end; /* 向右 */
 }
