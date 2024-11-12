@@ -46,8 +46,8 @@
 
 /*左侧标题*/
 .titleItem {
-    width: 100px;
-    height: 100px;
+    width: 256px;
+    height: 64px;
     background-color: #DBD2C9;
     text-align: center; /*文字居中*/
     border-radius: 8px; /*边框圆角半径*/

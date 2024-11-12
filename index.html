@@ -5,27 +5,60 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Main</title>
     <link rel="stylesheet" href="css/style.css">
+    <script src="../../AppData/Roaming/JetBrains/WebStorm2024.2/javascript/extLibs/http_cdn.jsdelivr.net_npm_marked_marked.min.js"></script>
 </head>
 <body>
 <div class="container">
 
     <div class="leftTitleList"></div>
+    <div class="rightContent"></div>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <script>
-        // 使用 fetch API 加载外部文件
         fetch('leftTitleList.html')
             .then(response => response.text())
             .then(data => {
                 // 将加载的 HTML 插入到指定的 div 中
                 document.querySelector('.leftTitleList').innerHTML = data;
+                bindButtonClickHandlers()
             })
             .catch(error => {
                 console.error('Error loading external HTML file:', error);
             });
+
+        //给按钮添加事件
+        function bindButtonClickHandlers() {
+            // 获取所有 class 为 'myButton' 的按钮
+            const buttons = document.querySelectorAll('.titleItem');
+
+            // 为每个按钮添加点击事件
+            buttons.forEach(button => {
+                button.addEventListener('click', function () {
+                    const titleItem = this.dataset.title;
+                    loadMarkdown(titleItem)
+                });
+            });
+        }
+
+        function loadMarkdown(fileName) {
+            // 使用 fetch 加载文件
+            fetch(`md/${fileName}.md`)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('File not found');
+                    }
+                    return response.text();
+                })
+                .then(mdContent => {
+                    // 将 Markdown 转换为 HTML
+                    // 将生成的 HTML 插入到指定的 div 中
+                    const mdHtmlContent = marked.parse(mdContent)
+                    document.querySelector('.rightContent').innerHTML = mdHtmlContent.toString();
+                })
+                .catch(error => {
+                    document.querySelector('.rightContent').innerHTML = `<p>Error: ${error.message}</p>`;
+                });
+        }
     </script>
-
-    <div class="rightContent">
-
-    </div>
 </div>
 </body>
 </html>
