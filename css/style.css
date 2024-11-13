@@ -20,8 +20,8 @@
 
 /* 整个页面 */
 .container {
-    width: 100%;
-    height: 100%;
+    min-width: 100vw;
+    min-height: 100vh;
     padding: 10px;
     background-color: #BEBEBE;
     display: flex;
@@ -31,8 +31,8 @@
 
 /*左侧标题列表*/
 .leftTitleList {
-    width: 20%;
-    height: 80vh;
+    width: 36vw;
+    max-height: 80vh;
     overflow-y: auto;
     display: flex;
     flex-direction: column; /*水平布局*/
@@ -43,13 +43,13 @@
 
 /*右侧正文*/
 .rightContent {
-    width: 60vh;
+    width: 49vw;
     background-color: #A9B7AA;
 }
 
 /*左侧标题*/
 .titleItem {
-    width: 256px;
+    width:  21vw;
     height: 64px;
     min-height: 64px;
     background-color: #DBD2C9;
